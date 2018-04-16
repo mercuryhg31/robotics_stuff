@@ -1,0 +1,85 @@
+git
+    opens some stuff for a git menu
+pwd
+    lists all the directories you're in
+        print working directory
+c9
+    this is specific to c9 and opens a file if you use it
+cat
+    prints out all the code you have in some file that you define
+cd ..
+    brings you back to the previous parent directory
+touch
+    make new file
+mkdir
+    makes new directory
+rm
+    removes files
+rm -r
+    removes directories
+        normally, if you wanted to delete folders with folders in them, you'd have to be really careful
+.file
+    this is a hidden file
+ls -a
+    shows hidden files
+ls -alt
+    presents the files as a table with more information
+ls -aR
+    look like a cool hacker :)
+tree
+    lists absolutely everything
+^C
+colormgr
+cd ~/workspace/
+    to get you back up and running
+cp
+    copies files
+nano
+    text editor that you use when you're in terminal
+vim
+    another, but freaky, text editor
+    exit with escape, shift, colon, w, q, enter
+mv
+    move files
+mv file file2
+    changes file name to file2
+man
+    manual page
+    type quit to leave
+git clone github.com/sal;fjs;alfjpqowijsd.git
+    clones a directory from github
+git-training (master)
+    master stands for the branch that you're on in the repository
+git commit
+    update changes
+git add
+    add file
+git commit -a -m "Added bee movie"
+git pull
+    updates?
+git log
+    log of all of your revision history
+git commit -m ""
+    better than vim
+-------------------------------------------
+git commit -m "MSG"
+    Snapshot (Save File)
+git add <file>
+    Put files in your snapshot
+git log
+    See your snapshots
+git clone <url>
+    Grab files from server
+git push
+    Send files to server
+git pull
+    Update your directory
+-------------------------------------------
+git branch
+    list of all the branches that you have
+git branch <branch name>
+    makes new branch
+git checkout <branch>
+    switches to branch
+git merge
+    
