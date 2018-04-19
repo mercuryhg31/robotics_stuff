@@ -3,10 +3,12 @@
 
 class Human
 {
-    double heightInches
+    // m_ --> member variable
+    double m_heightInches;
     
+public:
     Human(double height); // ~Human();
     void SetHeight(double height);
-}
+};
 
 #endif
