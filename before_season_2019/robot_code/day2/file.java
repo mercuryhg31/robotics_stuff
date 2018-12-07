@@ -15,30 +15,35 @@ class Robot extends TimedRobot {
         motorBL = new WPI_TalonSRX(3);
         motorBR = new WPI_TalonSRX(4);
         controller = new XboxController(0);
+        
+        drive = new DifferentialDrive(motorFL, motorFR);
     }
     
     void teleopInit() {
-        motor.set(1.0);
-        Timer.delay(1.0);
-        motor.set(0.0);
+        // motor.set(1.0);
+        // Timer.delay(1.0);
+        // motor.set(0.0);
     }
     
     void teleopPeriodic() {
-        if(controller.getAButton()) {
-            motorFL.set(1.0);
-            motorFR.set(1.0);
-            motorBL.set(1.0);
-            motorBR.set(1.0);
-        }
-        else if(controller.getButton()) {
-            motorFL.set(-1.0);
-            motorFR.set(-1.0);
-            motorBL.set(-1.0);
-            motorBR.set(-1.0);
-        }
-        else {
-            motor.set(0.0);
-        }
+        double yValue = controller.getY(GenericHID.Hand.kLeft);
+        double xValue = controller.getX(GenericHID.Hand.kLeft);
+        drive.arcadeDrive(yValue, xValue);
+        // if(controller.getAButton()) {
+        //     motorFL.set(1.0);
+        //     motorFR.set(1.0);
+        //     motorBL.set(1.0);
+        //     motorBR.set(1.0);
+        // }
+        // else if(controller.getButton()) {
+        //     motorFL.set(-1.0);
+        //     motorFR.set(-1.0);
+        //     motorBL.set(-1.0);
+        //     motorBR.set(-1.0);
+        // }
+        // else {
+        //     motor.set(0.0);
+        // }
     }
 }
 
