@@ -46,8 +46,17 @@ class Robot extends TimedRobot {
             driveSpeed = controller.getY(GenericHID.Hand.kRight);
             turnSpeed = controller.getX(GenericHID.Hand.kLeft);
         }
-        
         drive.arcadeDrive(driveSpeed, turnSpeed);
+        
+        if (controller.getXButton()) {
+            elevator.set(-0.5);
+        }
+        else if (controller.getYButton()) {
+            elevator.set(0.5);
+        }
+        else {
+            elevator.set(0);
+        }
     }
 }
 
