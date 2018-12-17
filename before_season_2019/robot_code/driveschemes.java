@@ -6,10 +6,16 @@ class Robot extends TimedRobot {
     WPI_TalonSRX motorFR;
     WPI_TalonSRX motorBL;
     WPI_TalonSRX motorBR;
+    WPI_TalonSRX elevator;
+    // CANTalonSRX elevmotorL;
+    // CANTalonSRX elevmotorR;
+    WPI_TalonSRX elevatorL;
+    WPI_TalonSRX elevatorR;
     SpeedControllerGroup left;
     SpeedControllerGroup right;
     DifferentialDrive drive;
     XboxController controller;
+    XboxController operator;
     
     void robotInit() {
         motorFL = new WPI_TalonSRX(1);
@@ -18,6 +24,10 @@ class Robot extends TimedRobot {
         motorBR = new WPI_TalonSRX(4);
         
         controller = new XboxController(0);
+        operator = new XboxController(0);
+        
+        elevatorL = new WPI_TalonSRX(5);
+        elevatorR = new WPI_TalonSRX(6);
         
         left = new SpeedControllerGroup(motorFL, motorBL);
         
@@ -57,6 +67,15 @@ class Robot extends TimedRobot {
             
         } else {
             elevator.set(0);
+        }
+        
+        if (operator.getTriggerAxis(GenericHID.Hand.kLeft) > 0.0) {
+            elevatorL.set(-operator.getTriggerAxis(GenericHID.Hand.kLeft));
+            elevatorR.set(-operator.getTriggerAxis(GenericHID.Hand.kLeft));
+            
+        } else if (operator.getTriggerAxis(GenericHID.Hand.kRight) > 0.0) {
+            elevatorL.set(operator.getTriggerAxis(GenericHID.Hand.kRight));
+            elevatorR.set(operator.getTriggerAxis(GenericHID.Hand.kRight));
         }
     }
 }

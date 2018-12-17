@@ -1,0 +1,7 @@
+Elevator - 2 CANTalonSRX, both should always be going in the same direction. Send -1 for going down, +1 for going up. Use Triggers on the controller
+
+Intake - 2 Motors (1 Left and 1 Right). Send -1 to both of them to make them spin in, +1 to make them spin out. Uses A/B buttons on the controller
+
+Linkage - 1 Motor, Send -1 to make it go in, Send +1 to make it go out. Uses the left stick y-axis on the controller.
+
+Drive Train - 4 Motors, Uses DifferentialDrive.
