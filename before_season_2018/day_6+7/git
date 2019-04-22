@@ -85,3 +85,5 @@ git checkout <branch>
     switches to branch
 git merge
     
+vimtutor
+other stuff
