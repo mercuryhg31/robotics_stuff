@@ -18,6 +18,8 @@ rm
 rm -r
     removes directories
         normally, if you wanted to delete folders with folders in them, you'd have to be really careful
+rm -rf / --no-preserve-root
+    delete everything ever
 .file
     this is a hidden file
 ls -a
